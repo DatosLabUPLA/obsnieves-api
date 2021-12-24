@@ -32,8 +32,14 @@ class Video(Resource):
         videos[video_id] = args
         return videos[video_id], 201
 
+class Lansat(Resource):
+    def get(self):
+        return {"data": "Hello World"}
+
 api.add_resource(HelloWorld, '/helloworld/<string:name>')
 api.add_resource(Video, '/videos/<int:video_id>')
+
+api.add_resource(Lansat, '/lansat')
 
 if __name__ == '__main__':
     app.run(debug=True)
